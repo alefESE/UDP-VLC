@@ -97,18 +97,8 @@ public class MainWindow extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         ipServidor.setText("127.0.0.1");
-        ipServidor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipServidorActionPerformed(evt);
-            }
-        });
 
         priori1.setText("Prioridade");
-        priori1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori1ActionPerformed(evt);
-            }
-        });
 
         jToggleButton1.setText("Iniciar");
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,18 +118,8 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel4.setText("Clientes");
 
         ipCliente1.setText("127.0.0.1");
-        ipCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente1ActionPerformed(evt);
-            }
-        });
 
         portaCliente1.setText("6000");
-        portaCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente1ActionPerformed(evt);
-            }
-        });
 
         iniciar1.setText("Iniciar");
         iniciar1.addActionListener(new java.awt.event.ActionListener() {
@@ -153,18 +133,8 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel6.setText("Porta");
 
         ipCliente2.setText("127.0.0.1");
-        ipCliente2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente2ActionPerformed(evt);
-            }
-        });
 
         portaCliente2.setText("6000");
-        portaCliente2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente2ActionPerformed(evt);
-            }
-        });
 
         iniciar2.setText("Iniciar");
         iniciar2.addActionListener(new java.awt.event.ActionListener() {
@@ -178,25 +148,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel9.setText("Porta");
 
         priori2.setText("Prioridade");
-        priori2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori2ActionPerformed(evt);
-            }
-        });
 
         ipCliente3.setText("127.0.0.1");
-        ipCliente3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente3ActionPerformed(evt);
-            }
-        });
 
         portaCliente3.setText("6000");
-        portaCliente3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente3ActionPerformed(evt);
-            }
-        });
 
         iniciar3.setText("Iniciar");
         iniciar3.addActionListener(new java.awt.event.ActionListener() {
@@ -210,25 +165,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel12.setText("Porta");
 
         priori3.setText("Prioridade");
-        priori3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori3ActionPerformed(evt);
-            }
-        });
 
         ipCliente5.setText("127.0.0.1");
-        ipCliente5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente5ActionPerformed(evt);
-            }
-        });
 
         portaCliente5.setText("6000");
-        portaCliente5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente5ActionPerformed(evt);
-            }
-        });
 
         iniciar5.setText("Iniciar");
         iniciar5.addActionListener(new java.awt.event.ActionListener() {
@@ -242,25 +182,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel15.setText("Porta");
 
         priori5.setText("Prioridade");
-        priori5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori5ActionPerformed(evt);
-            }
-        });
 
         ipCliente6.setText("127.0.0.1");
-        ipCliente6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente6ActionPerformed(evt);
-            }
-        });
 
         portaCliente6.setText("6000");
-        portaCliente6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente6ActionPerformed(evt);
-            }
-        });
 
         iniciar6.setText("Iniciar");
         iniciar6.addActionListener(new java.awt.event.ActionListener() {
@@ -274,25 +199,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel18.setText("Porta");
 
         priori6.setText("Prioridade");
-        priori6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori6ActionPerformed(evt);
-            }
-        });
 
         ipCliente4.setText("127.0.0.1");
-        ipCliente4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente4ActionPerformed(evt);
-            }
-        });
 
         portaCliente4.setText("6000");
-        portaCliente4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente4ActionPerformed(evt);
-            }
-        });
 
         iniciar4.setText("Iniciar");
         iniciar4.addActionListener(new java.awt.event.ActionListener() {
@@ -306,25 +216,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel21.setText("Porta");
 
         priori4.setText("Prioridade");
-        priori4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori4ActionPerformed(evt);
-            }
-        });
 
         ipCliente8.setText("127.0.0.1");
-        ipCliente8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente8ActionPerformed(evt);
-            }
-        });
 
         portaCliente8.setText("6000");
-        portaCliente8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente8ActionPerformed(evt);
-            }
-        });
 
         iniciar8.setText("Iniciar");
         iniciar8.addActionListener(new java.awt.event.ActionListener() {
@@ -338,25 +233,10 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel24.setText("Porta");
 
         priori8.setText("Prioridade");
-        priori8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori8ActionPerformed(evt);
-            }
-        });
 
         ipCliente7.setText("127.0.0.1");
-        ipCliente7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ipCliente7ActionPerformed(evt);
-            }
-        });
 
         portaCliente7.setText("6000");
-        portaCliente7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                portaCliente7ActionPerformed(evt);
-            }
-        });
 
         iniciar7.setText("Iniciar");
         iniciar7.addActionListener(new java.awt.event.ActionListener() {
@@ -370,11 +250,6 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel30.setText("Porta");
 
         priori7.setText("Prioridade");
-        priori7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                priori7ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -582,11 +457,8 @@ public class MainWindow extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void priori1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori1ActionPerformed
-
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        if(!jToggleButton1.isSelected()) System.exit(0);
         try {
             new Produtor(Integer.parseInt(portaServidor.getText())/*,
                     InetAddress.getByName(ipServidor.getText())*/).start();
@@ -596,176 +468,118 @@ public class MainWindow extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
-    private void ipServidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipServidorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipServidorActionPerformed
-
-    private void ipCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente1ActionPerformed
-
     private void iniciar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar1ActionPerformed
-        try {
-            System.err.println(portaCliente1.getText());
-            consumidores[0] = new Consumidor(Integer.parseInt(portaCliente1.getText()),
-                   InetAddress.getByName(ipCliente1.getText()), false);
-            consumidores[0].start();
-            System.err.println("Consumidor 1 criado");
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar1.isSelected()) consumidores[0].Suicida();
+        else{
+            try {
+                System.err.println(portaCliente1.getText());
+                consumidores[0] = new Consumidor(Integer.parseInt(portaCliente1.getText()),
+                       InetAddress.getByName(ipCliente1.getText()), false);
+                consumidores[0].start();
+                System.err.println("Consumidor 1 criado");
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar1ActionPerformed
 
-    private void portaCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente1ActionPerformed
-
-    private void ipCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente2ActionPerformed
-
-    private void portaCliente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente2ActionPerformed
-
     private void iniciar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar2ActionPerformed
-        try {
-            consumidores[1] = new Consumidor(Integer.parseInt(portaCliente2.getText()),
-                    InetAddress.getByName(ipCliente2.getText()), priori2.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar2.isSelected()) consumidores[1].Suicida();
+        else{    
+            try {
+                System.err.println(portaCliente2.getText());
+                consumidores[1] = new Consumidor(Integer.parseInt(portaCliente2.getText()),
+                       InetAddress.getByName(ipCliente1.getText()), false);
+                consumidores[1].start();
+                System.err.println("Consumidor 2 criado");
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar2ActionPerformed
 
-    private void priori2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori2ActionPerformed
-
-    private void ipCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente3ActionPerformed
-
-    private void portaCliente3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente3ActionPerformed
-
     private void iniciar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar3ActionPerformed
-        try {
-            consumidores[2] = new Consumidor(Integer.parseInt(portaCliente3.getText()),
-                    InetAddress.getByName(ipCliente3.getText()), priori3.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar3.isSelected()) consumidores[2].Suicida();
+        else{
+            try {
+                System.err.println(portaCliente3.getText());
+                consumidores[2] = new Consumidor(Integer.parseInt(portaCliente3.getText()),
+                       InetAddress.getByName(ipCliente3.getText()), false);
+                consumidores[2].start();
+                System.err.println("Consumidor 3 criado");
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar3ActionPerformed
 
-    private void priori3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori3ActionPerformed
-
-    private void ipCliente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente5ActionPerformed
-
-    private void portaCliente5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente5ActionPerformed
-
     private void iniciar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar5ActionPerformed
-       try {
-            consumidores[4] = new Consumidor(Integer.parseInt(portaCliente5.getText()),
-                    InetAddress.getByName(ipCliente5.getText()), priori5.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        if(!iniciar5.isSelected()) consumidores[4].Suicida();
+        try {
+             System.err.println(portaCliente5.getText());
+             consumidores[4] = new Consumidor(Integer.parseInt(portaCliente5.getText()),
+                    InetAddress.getByName(ipCliente5.getText()), false);
+             consumidores[4].start();
+             System.err.println("Consumidor 5 criado");
+         } catch (SocketException | UnknownHostException ex) {
+             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+         }
     }//GEN-LAST:event_iniciar5ActionPerformed
 
-    private void priori5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori5ActionPerformed
-
-    private void ipCliente6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente6ActionPerformed
-
-    private void portaCliente6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente6ActionPerformed
-
     private void iniciar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar6ActionPerformed
+        if(!iniciar6.isSelected())consumidores[5].Suicida();
         try {
+            System.err.println(portaCliente6.getText());
             consumidores[5] = new Consumidor(Integer.parseInt(portaCliente6.getText()),
-                    InetAddress.getByName(ipCliente6.getText()), priori6.isSelected());
+                   InetAddress.getByName(ipCliente6.getText()), false);
+            consumidores[5].start();
+            System.err.println("Consumidor 1 criado");
         } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar6ActionPerformed
 
-    private void priori6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori6ActionPerformed
-
-    private void ipCliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente4ActionPerformed
-
-    private void portaCliente4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente4ActionPerformed
-
     private void iniciar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar4ActionPerformed
-        try {
-            consumidores[3] = new Consumidor(Integer.parseInt(portaCliente4.getText()),
-                    InetAddress.getByName(ipCliente4.getText()), priori4.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar4.isSelected())consumidores[3].Suicida();
+        else{
+            try {
+                consumidores[3] = new Consumidor(Integer.parseInt(portaCliente4.getText()),
+                        InetAddress.getByName(ipCliente4.getText()), priori4.isSelected());
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar4ActionPerformed
 
-    private void priori4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori4ActionPerformed
-
-    private void ipCliente8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente8ActionPerformed
-
-    private void portaCliente8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente8ActionPerformed
-
     private void iniciar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar8ActionPerformed
-        try {
-            consumidores[7] = new Consumidor(Integer.parseInt(portaCliente8.getText()),
-                    InetAddress.getByName(ipCliente8.getText()), priori8.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar8.isSelected()) consumidores[7].Suicida();
+        else{
+            try {
+                System.err.println(portaCliente8.getText());
+                consumidores[7] = new Consumidor(Integer.parseInt(portaCliente8.getText()),
+                       InetAddress.getByName(ipCliente8.getText()), false);
+                consumidores[7].start();
+                System.err.println("Consumidor 8 criado");
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar8ActionPerformed
 
-    private void priori8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori8ActionPerformed
-
-    private void ipCliente7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipCliente7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ipCliente7ActionPerformed
-
-    private void portaCliente7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portaCliente7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_portaCliente7ActionPerformed
-
     private void iniciar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar7ActionPerformed
-        try {
-            consumidores[6] = new Consumidor(Integer.parseInt(portaCliente7.getText()),
-                    InetAddress.getByName(ipCliente7.getText()), priori7.isSelected());
-        } catch (SocketException | UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+        if(!iniciar7.isSelected())consumidores[6].Suicida();
+        else{
+            try {
+                System.err.println(portaCliente7.getText());
+                consumidores[6] = new Consumidor(Integer.parseInt(portaCliente7.getText()),
+                       InetAddress.getByName(ipCliente7.getText()), false);
+                consumidores[6].start();
+                System.err.println("Consumidor 1 criado");
+            } catch (SocketException | UnknownHostException ex) {
+                Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_iniciar7ActionPerformed
-
-    private void priori7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_priori7ActionPerformed
 
     /**
      * @param args the command line arguments

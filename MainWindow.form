@@ -253,17 +253,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipServidorActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="priori1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="jToggleButton1">
       <Properties>
@@ -302,17 +296,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente1">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente1ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar1">
       <Properties>
@@ -336,17 +324,11 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente2">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar2">
       <Properties>
@@ -370,25 +352,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori2ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente3">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente3ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente3">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente3ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar3">
       <Properties>
@@ -412,25 +385,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori3ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente5">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente5">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar5">
       <Properties>
@@ -454,25 +418,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori5ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente6">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente6ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente6">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente6ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar6">
       <Properties>
@@ -496,25 +451,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori6ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente4">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente4ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente4">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente4ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar4">
       <Properties>
@@ -538,25 +484,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori4ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente8">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente8ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente8">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente8ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar8">
       <Properties>
@@ -580,25 +517,16 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori8ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="ipCliente7">
       <Properties>
         <Property name="text" type="java.lang.String" value="127.0.0.1"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ipCliente7ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="portaCliente7">
       <Properties>
         <Property name="text" type="java.lang.String" value="6000"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="portaCliente7ActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JToggleButton" name="iniciar7">
       <Properties>
@@ -622,9 +550,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Prioridade"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="priori7ActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>

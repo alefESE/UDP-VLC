@@ -25,7 +25,7 @@ public class Consumidor extends Thread implements Sincronizador{
     boolean suicida;
     
     public Consumidor(int porta, InetAddress addr, boolean prioridade) throws SocketException{
-        cliente = new DatagramSocket(porta);
+        cliente = new DatagramSocket();
         this.addr = addr;
         this.porta = porta;
         this.prioridade = prioridade;
