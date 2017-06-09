@@ -14,18 +14,12 @@ import java.util.concurrent.Semaphore;
  *
  * @author aluno
  */
-public class Produtor extends Thread{
+public class Produtor extends Thread implements Sincronizador{
     
     DatagramSocket server;
     DatagramPacket pacote;
-    Buffer buffer;
-    Semaphore sem;
-    Semaphore con;
-    public Produtor(int porta, Buffer buffer, Semaphore sem, Semaphore con) throws SocketException{
-        this.server = new DatagramSocket(porta);
-        this.buffer = buffer;
-        this.sem = sem;
-        this.con = con;
+    public Produtor(int porta/*, InetAddress addr*/) throws SocketException{
+        this.server = new DatagramSocket(porta/*, addr*/);
     }
     
     @Override
@@ -34,16 +28,12 @@ public class Produtor extends Thread{
         pacote = new DatagramPacket(data,data.length);
         while(true){
             try{
-                System.out.println("Cheguei");
+                while(!buffer.vazio) produtor.acquire(); //P(cheio) await
                 server.receive(pacote);
-                buffer.Insere(pacote);
-                //while(buffer.isCheio()){
-                   con.release();
-                //    sem.acquire();
-                //}
-            } catch (IOException ex) {
-                Logger.getLogger(Produtor.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InterruptedException ex) {
+                System.err.println("Recebi:" + pacote.toString());
+                buffer.Insere(pacote.getData());
+                if(!buffer.vazio) consumidor.release(consumidor.getQueueLength());//V(cheio)
+            } catch (IOException | InterruptedException ex) {
                 Logger.getLogger(Produtor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }

@@ -14,26 +14,24 @@ import java.util.concurrent.Semaphore;
  *
  * @author aluno
  */
-public class Consumidor extends Thread{
-    Buffer buffer;
+public class Consumidor extends Thread implements Sincronizador{
     DatagramSocket cliente;
     DatagramPacket pacote;
-    boolean prioridade;
-    Semaphore sem;
-    Semaphore prod;
-    boolean suicida;
     InetAddress addr;
     int porta;
+    boolean prioridade;
+    static boolean temPrioridade;
+    static Semaphore exclusao = new Semaphore(1);
+    boolean suicida;
     
-    public Consumidor(int porta,InetAddress addr,Buffer buffer, boolean prioridade, Semaphore sem, Semaphore prod) throws SocketException{
-        this.buffer = buffer;
-        cliente = new DatagramSocket();
-        this.prioridade = prioridade;
-        this.sem = sem;
-        suicida = false;
+    public Consumidor(int porta, InetAddress addr, boolean prioridade) throws SocketException{
+        cliente = new DatagramSocket(porta);
         this.addr = addr;
         this.porta = porta;
-        
+        this.prioridade = prioridade;
+        if(prioridade) temPrioridade = true;
+        suicida = false;
+        Buffer.consumidores++;
     }
     
     @Override
@@ -42,20 +40,23 @@ public class Consumidor extends Thread{
         pacote = new DatagramPacket(data, data.length, addr, porta);
         while(true){
             try{
-                System.out.println("Entrei");
-                pacote.setData(buffer.Ler(prioridade));
-                cliente.send(pacote);
-                System.out.println("enviei");
-                //sem.acquire();
-                if(suicida) break;
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IOException ex) {
+                while((temPrioridade && !prioridade) || buffer.vazio) consumidor.acquire(); //P(vazio) await
+                exclusao.acquire();//<
+                pacote.setData(buffer.Ler()); //P(mutex) buffer = ler() v(mutex)
+                exclusao.release();//>
+                cliente.send(pacote);//envia
+                System.err.println("Enviei:" + pacote.toString());
+                if(buffer.vazio) produtor.release();//V(vazio)
+                if(suicida) break;//se mata
+            } catch (InterruptedException | IOException ex) {
                 Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         try {
-            buffer.RemoveConsumidor(prioridade);
+            exclusao.acquire();//<
+            Buffer.consumidores--;
+            if(prioridade) temPrioridade = false;
+            exclusao.release();//>
         } catch (InterruptedException ex) {
             Logger.getLogger(Consumidor.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -64,4 +65,5 @@ public class Consumidor extends Thread{
     public void Suicida(){
         suicida = true;
     }
+    
 }

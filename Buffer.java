@@ -4,110 +4,54 @@
  * and open the template in the editor.
  */
 package vlcproxy;
-import java.net.DatagramPacket;
 import java.util.concurrent.Semaphore;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 /**
  *
  * @author aluno
  */
 public class Buffer {
-    int consumidores;
-    int leram;
-    int prioridadeLeram;
-    int nw;
-    int nr;
-    int frente;
-    int tras;
-    int numPrioridade;
-    boolean cheio;
+    private byte[][] buffer;
+    private int n;
+    private static int rear;
+    private static int front;
+    public static boolean nr;
+    public static boolean nw;
+    public static int leram;
+    public static int consumidores;
     boolean vazio;
-    boolean temPrioridade;
-    byte[][] buffer;
-    byte[] temp;
-    Semaphore prod;
-    Semaphore con = new Semaphore(0);
-    Semaphore test = new Semaphore(1);
-    Semaphore conPriori = new Semaphore(0);
     
-    public Buffer(int tamanho, Semaphore prod){
-        buffer = new byte[8][tamanho];
-        temp = new byte[tamanho];
-        vazio = true;
-        temPrioridade = false;
-        numPrioridade = 0;
+    public Buffer(int tamanho, int n){
+        buffer = new byte[n][tamanho];
+        rear = 0;
+        front = 0;
+        this.n = n;
+        nr = false;
+        nw = false;
         consumidores = 0;
         leram = 0;
-        nr = 0;
-        nw = 0;
-        tras = 0;
-        frente = 0;
-        prioridadeLeram = 0;
-        cheio = false;
-        this.prod = prod;
+        vazio = true;
     }
     
-    public void Insere(DatagramPacket pacote) throws InterruptedException{
-        while(nr != 0) prod.acquire();
-        nw ++;
-        buffer[frente] = pacote.getData();
-        frente = (frente + 1) % 8;
-        vazio = false;
-        if(frente == tras) cheio = true;
-        con.release();
-        nw --;
+    public void Insere(byte[] data) throws InterruptedException{
+        nw = true;
+        buffer[rear] = data;
+        System.err.println("Escrevendo:"+buffer[rear].toString()+"na posicao:"+rear);
+        rear = (rear + 1) % n;
+        if(rear == front) vazio = false;
+        nw = false;
     }
     
-    public byte[] Ler(boolean prioridade) throws InterruptedException{
-        while(nw != 0 || vazio) con.acquire();
-        while(temPrioridade && prioridadeLeram < numPrioridade && !prioridade) con.acquire();
-        while(temPrioridade && prioridade) conPriori.acquire();
-        if(prioridade) temPrioridade = true;
-        nr++;
-        temp = buffer[tras];
-        nr--;
+    public byte[] Ler() throws InterruptedException{
+        nr = true;
+        byte[] temp = buffer[front];
+        System.err.println("lendo:"+temp.toString()+"na posicao:"+front);
         leram++;
-        if(leram == consumidores){
-            tras = (tras + 1) % 8;
-            if(tras == frente){
-                vazio = true;
-                cheio = false;
-                prod.release(0);
-            }          
+        if(leram == consumidores){ 
+            leram = 0;
+            front = (front + 1) % n;
         }
-        if(prioridade){
-            temPrioridade = false;
-            prioridadeLeram++;
-        }
-        conPriori.release(0);
-        con.release(0);
+        if(rear == front) vazio = true;
+        nr = false;
         return temp;
-    }
-    
-    public void AddConsumidor(boolean prioridade) throws InterruptedException{
-        test.acquire();
-        if(prioridade) numPrioridade++;
-        consumidores++;
-        test.release();
-    }
-    
-    public void RemoveConsumidor(boolean prioridade) throws InterruptedException{
-        test.acquire();
-        if(prioridade) numPrioridade--;
-        consumidores--;
-        test.release();
-    }
-    
-    public boolean todosLeram() throws InterruptedException{
-        return leram == consumidores;
-    }
-    
-    public boolean isVazio(){
-        return vazio;
-    }
-    
-    public boolean isCheio(){
-        return cheio;
     }
 }

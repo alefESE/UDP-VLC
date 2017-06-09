@@ -5,6 +5,9 @@
  */
 package vlcproxy;
 
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
 import java.net.UnknownHostException;
@@ -90,7 +93,6 @@ public class MainWindow extends javax.swing.JDialog {
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         priori7 = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -374,13 +376,6 @@ public class MainWindow extends javax.swing.JDialog {
             }
         });
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -401,9 +396,7 @@ public class MainWindow extends javax.swing.JDialog {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(portaServidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jToggleButton1)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton1))
+                                    .addComponent(jToggleButton1))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(9, 9, 9)
                                     .addComponent(jLabel5)
@@ -516,8 +509,7 @@ public class MainWindow extends javax.swing.JDialog {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(portaServidor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jButton1))
+                    .addComponent(jToggleButton1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -596,12 +588,12 @@ public class MainWindow extends javax.swing.JDialog {
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         try {
-            // TODO add your handling code here:
-            sinc.AddProdutor(Integer.parseInt(portaServidor.getText()), buffer);
+            new Produtor(Integer.parseInt(portaServidor.getText())/*,
+                    InetAddress.getByName(ipServidor.getText())*/).start();
+            System.err.println("Produtor criado");
         } catch (SocketException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void ipServidorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipServidorActionPerformed
@@ -614,12 +606,12 @@ public class MainWindow extends javax.swing.JDialog {
 
     private void iniciar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar1ActionPerformed
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente1.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente1.getText()), addr, buffer, priori1.isSelected(), 0);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            System.err.println(portaCliente1.getText());
+            consumidores[0] = new Consumidor(Integer.parseInt(portaCliente1.getText()),
+                   InetAddress.getByName(ipCliente1.getText()), false);
+            consumidores[0].start();
+            System.err.println("Consumidor 1 criado");
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar1ActionPerformed
@@ -637,14 +629,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente2ActionPerformed
 
     private void iniciar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar2ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente2.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente2.getText()), addr, buffer, priori2.isSelected(), 1);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[1] = new Consumidor(Integer.parseInt(portaCliente2.getText()),
+                    InetAddress.getByName(ipCliente2.getText()), priori2.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar2ActionPerformed
@@ -662,14 +650,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente3ActionPerformed
 
     private void iniciar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar3ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente3.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente3.getText()), addr, buffer, priori3.isSelected(), 2);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[2] = new Consumidor(Integer.parseInt(portaCliente3.getText()),
+                    InetAddress.getByName(ipCliente3.getText()), priori3.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar3ActionPerformed
@@ -687,14 +671,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente5ActionPerformed
 
     private void iniciar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar5ActionPerformed
-        // TODO add your handling code here:
-        try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente5.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente5.getText()), addr, buffer, priori5.isSelected(), 4);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+       try {
+            consumidores[4] = new Consumidor(Integer.parseInt(portaCliente5.getText()),
+                    InetAddress.getByName(ipCliente5.getText()), priori5.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar5ActionPerformed
@@ -712,14 +692,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente6ActionPerformed
 
     private void iniciar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar6ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente6.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente6.getText()), addr, buffer, priori6.isSelected(), 5);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[5] = new Consumidor(Integer.parseInt(portaCliente6.getText()),
+                    InetAddress.getByName(ipCliente6.getText()), priori6.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar6ActionPerformed
@@ -737,14 +713,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente4ActionPerformed
 
     private void iniciar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar4ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente4.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente4.getText()), addr, buffer, priori4.isSelected(), 3);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[3] = new Consumidor(Integer.parseInt(portaCliente4.getText()),
+                    InetAddress.getByName(ipCliente4.getText()), priori4.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar4ActionPerformed
@@ -762,14 +734,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente8ActionPerformed
 
     private void iniciar8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar8ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente8.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente8.getText()), addr, buffer, priori8.isSelected(), 7);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[7] = new Consumidor(Integer.parseInt(portaCliente8.getText()),
+                    InetAddress.getByName(ipCliente8.getText()), priori8.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar8ActionPerformed
@@ -787,14 +755,10 @@ public class MainWindow extends javax.swing.JDialog {
     }//GEN-LAST:event_portaCliente7ActionPerformed
 
     private void iniciar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciar7ActionPerformed
-        // TODO add your handling code here:
         try {
-            // TODO add your handling code here:
-            addr = InetAddress.getByName(ipCliente7.getText());
-            sinc.AddConsumidor(Integer.parseInt(portaCliente7.getText()), addr, buffer, priori7.isSelected(), 6);
-        } catch (UnknownHostException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SocketException ex) {
+            consumidores[6] = new Consumidor(Integer.parseInt(portaCliente7.getText()),
+                    InetAddress.getByName(ipCliente7.getText()), priori7.isSelected());
+        } catch (SocketException | UnknownHostException ex) {
             Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_iniciar7ActionPerformed
@@ -802,16 +766,6 @@ public class MainWindow extends javax.swing.JDialog {
     private void priori7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_priori7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_priori7ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        try {
-            // TODO add your handling code here:
-            sinc.AddProdutor(Integer.parseInt(portaServidor.getText()), buffer);
-        } catch (SocketException ex) {
-            Logger.getLogger(MainWindow.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -854,11 +808,8 @@ public class MainWindow extends javax.swing.JDialog {
             }
         });
     }
-    
-    Sincronizador sinc;
-    static Buffer buffer;
-    static Semaphore sem;
-    InetAddress addr;
+
+    static Consumidor[] consumidores = new Consumidor[8];;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton iniciar1;
     private javax.swing.JToggleButton iniciar2;
@@ -877,7 +828,6 @@ public class MainWindow extends javax.swing.JDialog {
     private javax.swing.JTextField ipCliente7;
     private javax.swing.JTextField ipCliente8;
     private javax.swing.JTextField ipServidor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
